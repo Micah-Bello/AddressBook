@@ -30,7 +30,7 @@ namespace AddressBook
             services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(DataUtility.GetConnectionString(Configuration)));
 
             services.AddScoped<IImageService, ImageService>();
         }
